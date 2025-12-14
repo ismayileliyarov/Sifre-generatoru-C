@@ -1,55 +1,23 @@
-# Prerequisites
-*.d
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+#include <stdio.h>
 
-# Linker output
-*.ilk
-*.map
-*.exp
+int main() {
+    int uzunluq, i;
+    char sifre[50];
 
-# Precompiled Headers
-*.gch
-*.pch
+    printf("Uzunlugu daxil et: ");
+    scanf("%d", &uzunluq);
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+    for(i = 0; i < uzunluq; i++) {
+        if(i % 2 == 0)
+            sifre[i] = 'a' + i % 26;
+        else
+            sifre[i] = '0' + i % 10;
+    }
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+    sifre[uzunluq] = '\0';
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+    printf("Sifre: %s", sifre);
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
-
-# debug information files
-*.dwo
+    return 0;
+}
